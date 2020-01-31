@@ -17,7 +17,7 @@ struct RepoBuildView: View {
                     Image(systemName: repo.passing ? "checkmark" : "exclamationmark")
                     Text(repo.name)
                     Spacer()
-                    Text("# 12345")
+                    Text("# \(repo.buildNo)")
                 }.foregroundColor(repo.passing ? .green : .yellow)
                 HStack {
                     Image(systemName: "clock")

@@ -16,6 +16,7 @@
 		1177EF3423DDCF63008E8A16 /* Travis_CITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF3323DDCF63008E8A16 /* Travis_CITests.swift */; };
 		1177EF3F23DDCF63008E8A16 /* Travis_CIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF3E23DDCF63008E8A16 /* Travis_CIUITests.swift */; };
 		1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */; };
+		11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1177EF3E23DDCF63008E8A16 /* Travis_CIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travis_CIUITests.swift; sourceTree = "<group>"; };
 		1177EF4023DDCF63008E8A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildView.swift; sourceTree = "<group>"; };
+		11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */,
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
+				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
@@ -272,6 +275,7 @@
 			files = (
 				1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */,
 				1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */,
+				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
 			);

@@ -51,7 +51,25 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(repos) { repo in
+                    NavigationLink(destination: RepoBuildDetailView(repo: repo)
+                            .navigationBarTitle(Text(repo.name))) {
                     RepoBuildView(repo: repo)
+                       .contextMenu {
+                           Button(action: {
+                               // change country setting
+                           }) {
+                            Text("Repo URL")
+                            Image(systemName: "globe")
+                           }
+
+                           Button(action: {
+                               // enable geolocation
+                           }) {
+                               Text("Detect Location")
+                               Image(systemName: "location.circle")
+                           }
+                       }
+                    }
                 }
             }
         .navigationBarTitle(Text("Repos"))

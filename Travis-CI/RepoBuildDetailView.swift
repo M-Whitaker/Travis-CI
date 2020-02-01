@@ -18,6 +18,6 @@ struct RepoBuildDetailView: View {
 
 struct RepoBuildDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RepoBuildDetailView(repo: Repository(name: "matt43121/repo2", url: "https://example2.com", favourite: true, passing: false, buildNo: 5678, duration: 600, Finished: 1920))
+        RepoBuildDetailView(repo: Repository(name: "repo1", slug: "matt43121/repo2", url: "https://example2.com", favourite: true, default_branch: Branch(name: "Master"), passing: false, buildNo: 5678, duration: 600, Finished: 1920))
     }
 }

@@ -107,11 +107,11 @@
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
 				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
+				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
 				1177EF2423DDCF63008E8A16 /* Preview Content */,
-				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
 			);
 			path = "Travis-CI";
 			sourceTree = "<group>";

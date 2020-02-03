@@ -9,30 +9,38 @@
 import SwiftUI
 import Combine
 
-struct Build {
+struct Build: Identifiable, Decodable {
     var id: Int
     var number: String
     var state: String
+//    var duration: Int
+//    var startedAt: String
+//    var finishedAt: String
 }
 
-struct Branch: Identifiable {
-    var id = UUID()
+struct Branch: Decodable {
+//    var id: Int
     var name: String
-//    var last_build: Build
+    var lastBuild: Build?
+//    var updatedAt: String
+    
 }
 
-struct Repository: Identifiable {
-    var id = UUID()
+struct Repository: Identifiable, Decodable {
+    var id: Int
     var name: String
     var slug: String
-    var url: String
-    var favourite: Bool
-    var default_branch: Branch
-    var passing: Bool
-    var buildNo: Int
-    var duration: Int
-    var Finished: Int
+    var description: String?
+    var starred: Bool
+    var defaultBranch: Branch?
+    var active: Bool
+//    var buildNo: Int
+//    var duration: Int
+//    var Finished: Int
 }
+
+
+
 
 class NetworkManager: ObservableObject {
     var didChange = PassthroughSubject<NetworkManager, Never>()
@@ -41,29 +49,34 @@ class NetworkManager: ObservableObject {
         didSet {
             didChange.send(self)
         }
-
     }
     
     init() {
-//        guard let url = URL(string: "api.travis.com") else {return}
-//        URLSession.shared.dataTask(with: url) { (data, _, _) in
-//
-//            guard let data = data else {return}
-//
-//            let repos = try! JSONDecoder().decode([Repository], from: data)
-//            DispatchQueue.main.async {
-//                self.repos = repos
-//            }
-//        }
-        
-        
-        self.repos = [
-                Repository(name: "repo1", slug: "matt43121/repo1", url: "https://example.com", favourite: true, default_branch: Branch(name: "Master"), passing: true, buildNo: 1234, duration: 500, Finished: 1920),
-                Repository(name: "repo2", slug: "matt43121/repo2", url: "https://example2.com", favourite: true, default_branch: Branch(name: "Master"), passing: false, buildNo: 5678, duration: 600, Finished: 1920),
-                Repository(name: "repo3", slug: "matt43121/repo3", url: "https://example3.com", favourite: false, default_branch: Branch(name: "Master"), passing: true, buildNo: 9101112, duration: 1200, Finished: 1920),
-            ]
+        let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
+        let token = "token"
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else { print(error!); return }
+            guard let data = data else { print("No data"); return }
+        //    print(response)
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+            let repos = try! decoder.decode([Repository].self, from: data, keyPath: "repositories")
+            dump(repos)
+            DispatchQueue.main.async {
+                self.repos = repos
+            }
+            print("Finished")
+            
+        }.resume()
     }
 }
+        
 
 struct ContentView: View {
     var body: some View {
@@ -90,6 +103,7 @@ struct ContentView: View {
 
 struct HomeView: View {
     @State var networkManager = NetworkManager()
+    
     var body: some View {
             NavigationView {
                 List {

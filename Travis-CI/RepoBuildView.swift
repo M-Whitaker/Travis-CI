@@ -14,20 +14,20 @@ struct RepoBuildView: View {
     var body: some View {
         VStack(alignment: .leading) {
                 HStack {
-                    Image(systemName: repo.passing ? "checkmark" : "exclamationmark")
+                    Image(systemName: repo.active ? "checkmark" : "exclamationmark")
                     Text(repo.slug)
                     Spacer()
                     HStack {
                         Image(systemName: "number")
                         Text(repo.name)
                     }
-                }.foregroundColor(repo.passing ? .green : .yellow)
-                Text(repo.default_branch.name)
+                }.foregroundColor(repo.active ? .green : .yellow)
+//                Text(repo.defaultBranch.name)
                 HStack {
                     Image(systemName: "clock")
                     Text("Duration: About an hour ago")
                     Spacer()
-                    if repo.favourite {
+                    if repo.starred {
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
                     }
@@ -42,6 +42,6 @@ struct RepoBuildView: View {
 
 struct RepoBuildView_Previews: PreviewProvider {
     static var previews: some View {
-        RepoBuildView(repo: Repository(name: "repo2", slug: "matt43121/repo2", url: "https://example2.com", favourite: true, default_branch: Branch(name: "Master"), passing: false, buildNo: 5678, duration: 600, Finished: 1920))
+        RepoBuildView(repo: Repository(id: 3, name: "repo2", slug: "matt43121/repo2", starred: true, defaultBranch: Branch(name: "Master", lastBuild: Build(id: 1, number: "2", state: "Passing")), active: false))
     }
 }

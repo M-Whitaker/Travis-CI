@@ -43,14 +43,8 @@ struct Repository: Identifiable, Decodable {
 
 
 class NetworkManager: ObservableObject {
-    var didChange = PassthroughSubject<NetworkManager, Never>()
-    
-    var repos = [Repository]() {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    
+    @Published var repos:[Repository] = [Repository]()
+
     init() {
         let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
         let token = "token"
@@ -67,7 +61,7 @@ class NetworkManager: ObservableObject {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             let repos = try! decoder.decode([Repository].self, from: data, keyPath: "repositories")
-            dump(repos)
+//            dump(repos)
             DispatchQueue.main.async {
                 self.repos = repos
             }
@@ -102,7 +96,7 @@ struct ContentView: View {
 
 
 struct HomeView: View {
-    @State var networkManager = NetworkManager()
+    @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
             NavigationView {

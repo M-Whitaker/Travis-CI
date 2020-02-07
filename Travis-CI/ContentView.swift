@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-struct Build: Identifiable, Decodable {
+struct Build: Identifiable, Codable {
     var id: Int
     var number: String
     var state: String
@@ -18,7 +18,7 @@ struct Build: Identifiable, Decodable {
 //    var finishedAt: String
 }
 
-struct Branch: Decodable {
+struct Branch: Codable {
 //    var id: Int
     var name: String
     var lastBuild: Build?
@@ -26,7 +26,7 @@ struct Branch: Decodable {
     
 }
 
-struct Repository: Identifiable, Decodable {
+struct Repository: Identifiable, Codable {
     var id: Int
     var name: String
     var slug: String
@@ -45,13 +45,13 @@ struct Repository: Identifiable, Decodable {
 class NetworkManager: ObservableObject {
     @Published var repos:[Repository] = [Repository]()
 
-    init() {
+    func getRepos() {
         let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
         let token = "token"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
+        request.setValue("3", forHTTPHeaderField: "Travis-APßI-Version")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { print(error!); return }
             guard let data = data else { print("No data"); return }
@@ -68,6 +68,9 @@ class NetworkManager: ObservableObject {
             print("Finished")
             
         }.resume()
+    }
+    init() {
+        getRepos()
     }
 }
         
@@ -101,28 +104,57 @@ struct HomeView: View {
     var body: some View {
             NavigationView {
                 List {
-                    ForEach(networkManager.repos) { repo in
-                        NavigationLink(destination: RepoBuildDetailView(repo: repo)
-                                .navigationBarTitle(Text(repo.name))) {
-                        RepoBuildView(repo: repo)
-                           .contextMenu {
-                               Button(action: {
-                                   // change country setting
-                               }) {
-                                Text("Repo URL")
-                                Image(systemName: "globe")
-                               }
+                    Section(header: Text("Favs")) {
+                        ForEach(networkManager.repos) { repo in
+                            if repo.starred {
+                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
+                                        .navigationBarTitle(Text(repo.name))) {
+                                RepoBuildView(repo: repo)
+                                   .contextMenu {
+                                       Button(action: {
+                                           // change country setting
+                                       }) {
+                                        Text("Repo URL")
+                                        Image(systemName: "globe")
+                                       }
 
-                               Button(action: {
-                                   // enable geolocation
-                               }) {
-                                   Text("Detect Location")
-                                   Image(systemName: "location.circle")
-                               }
-                           }
+                                       Button(action: {
+                                           // enable geolocation
+                                       }) {
+                                           Text("Detect Location")
+                                           Image(systemName: "location.circle")
+                                       }
+                                   }
+                                }
+                            }
                         }
                     }
-                }
+                    Section(header: Text("Other")) {
+                        ForEach(networkManager.repos) { repo in
+                            if !repo.starred {
+                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
+                                        .navigationBarTitle(Text(repo.name))) {
+                                RepoBuildView(repo: repo)
+                                   .contextMenu {
+                                       Button(action: {
+                                           // change country setting
+                                       }) {
+                                        Text("Repo URL")
+                                        Image(systemName: "globe")
+                                       }
+
+                                       Button(action: {
+                                           // enable geolocation
+                                       }) {
+                                           Text("Detect Location")
+                                           Image(systemName: "location.circle")
+                                       }
+                                   }
+                                }
+                            }
+                        }
+                    }
+                }.listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Repositories"))
             }
     }

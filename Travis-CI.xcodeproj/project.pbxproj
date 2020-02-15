@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113EF64D23F8247B007DD545 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113EF64C23F8247B007DD545 /* Constants.swift */; };
 		1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */; };
 		1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */; };
 		1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF2023DDCF5F008E8A16 /* ContentView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113EF64C23F8247B007DD545 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1177EF1923DDCF5F008E8A16 /* Travis-CI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis-CI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
 				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
 				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
+				113EF64C23F8247B007DD545 /* Constants.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
@@ -278,6 +281,7 @@
 				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
+				113EF64D23F8247B007DD545 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

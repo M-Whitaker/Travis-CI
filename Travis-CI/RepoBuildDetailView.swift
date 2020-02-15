@@ -2,7 +2,7 @@
 //  RepoBuildDetailView.swift
 //  Travis-CI
 //
-//  Created by Adrian Whitaker on 31/01/2020.
+//  Created by Matt Whitaker on 31/01/2020.
 //  Copyright © 2020 Matt Whitaker. All rights reserved.
 //
 

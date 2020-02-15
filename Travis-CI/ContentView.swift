@@ -48,7 +48,6 @@ class NetworkManager: ObservableObject {
 
     func getRepos() {
         let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
-        let token = "token"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("token \(token)", forHTTPHeaderField: "Authorization")

@@ -39,8 +39,9 @@ struct Repository: Identifiable, Codable {
 //    var Finished: Int
 }
 
-
-
+struct Result: Codable {
+    var repositories: [Repository]
+}
 
 class NetworkManager: ObservableObject {
     @Published var repos:[Repository] = [Repository]()
@@ -60,10 +61,10 @@ class NetworkManager: ObservableObject {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-            let repos = try! decoder.decode([Repository].self, from: data, keyPath: "repositories")
+            let result = try! decoder.decode(Result.self, from: data)
 //            dump(repos)
             DispatchQueue.main.async {
-                self.repos = repos
+                self.repos = result.repositories
             }
             print("Finished")
             

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1150F7B423E7AF580082E045 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150F7B323E7AF580082E045 /* NestedDecodable.swift */; };
 		1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */; };
 		1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */; };
 		1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF2023DDCF5F008E8A16 /* ContentView.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1150F7B323E7AF580082E045 /* NestedDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
 		1177EF1923DDCF5F008E8A16 /* Travis-CI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis-CI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		1177EF1B23DDCF5F008E8A16 /* Travis-CI */ = {
 			isa = PBXGroup;
 			children = (
-				1150F7B323E7AF580082E045 /* NestedDecodable.swift */,
 				1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */,
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
@@ -278,7 +275,6 @@
 			files = (
 				1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */,
 				1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */,
-				1150F7B423E7AF580082E045 /* NestedDecodable.swift in Sources */,
 				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 import Combine
 
 struct Build: Identifiable, Codable {
@@ -100,7 +101,7 @@ struct ContentView: View {
 
 struct HomeView: View {
     @ObservedObject var networkManager = NetworkManager()
-    
+    @State private var isShowing = false
     var body: some View {
             NavigationView {
                 List {
@@ -155,6 +156,11 @@ struct HomeView: View {
                         }
                     }
                 }.listStyle(GroupedListStyle())
+                    .pullToRefresh(isShowing: $isShowing) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.isShowing = false
+                        }
+                    }
             .navigationBarTitle(Text("Repositories"))
             }
     }

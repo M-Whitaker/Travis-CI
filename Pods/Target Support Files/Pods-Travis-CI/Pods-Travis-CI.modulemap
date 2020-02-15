@@ -1,0 +1,6 @@
+module Pods_Travis_CI {
+  umbrella header "Pods-Travis-CI-umbrella.h"
+
+  export *
+  module * { export * }
+}

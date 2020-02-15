@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113D314023F82A39009D582E /* Travis_CIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF3E23DDCF63008E8A16 /* Travis_CIUITests.swift */; };
 		113EF64D23F8247B007DD545 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113EF64C23F8247B007DD545 /* Constants.swift */; };
+		113EF64F23F8277F007DD545 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 113EF64E23F8277F007DD545 /* Podfile */; };
 		1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */; };
 		1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */; };
 		1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF2023DDCF5F008E8A16 /* ContentView.swift */; };
 		1177EF2323DDCF63008E8A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2223DDCF63008E8A16 /* Assets.xcassets */; };
 		1177EF2623DDCF63008E8A16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2523DDCF63008E8A16 /* Preview Assets.xcassets */; };
 		1177EF2923DDCF63008E8A16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */; };
-		1177EF3423DDCF63008E8A16 /* Travis_CITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF3323DDCF63008E8A16 /* Travis_CITests.swift */; };
-		1177EF3F23DDCF63008E8A16 /* Travis_CIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF3E23DDCF63008E8A16 /* Travis_CIUITests.swift */; };
 		1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */; };
 		11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */; };
+		CD2516FEBD8ADE804FD1DDFF /* libPods-Travis-CI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		113EF64C23F8247B007DD545 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		113EF64E23F8277F007DD545 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		1177EF1923DDCF5F008E8A16 /* Travis-CI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travis-CI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,9 @@
 		1177EF4023DDCF63008E8A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildView.swift; sourceTree = "<group>"; };
 		11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildDetailView.swift; sourceTree = "<group>"; };
+		3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travis-CI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B70867A8AAEBF83E89455B1 /* Pods-Travis-CI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travis-CI.release.xcconfig"; path = "Target Support Files/Pods-Travis-CI/Pods-Travis-CI.release.xcconfig"; sourceTree = "<group>"; };
+		542C4F1BCD79E937943FAA4B /* Pods-Travis-CI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travis-CI.debug.xcconfig"; path = "Target Support Files/Pods-Travis-CI/Pods-Travis-CI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2516FEBD8ADE804FD1DDFF /* libPods-Travis-CI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065A48EA13CD2C5C93AA37BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				542C4F1BCD79E937943FAA4B /* Pods-Travis-CI.debug.xcconfig */,
+				4B70867A8AAEBF83E89455B1 /* Pods-Travis-CI.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1177EF1023DDCF5F008E8A16 = {
 			isa = PBXGroup;
 			children = (
+				113EF64E23F8277F007DD545 /* Podfile */,
 				1177EF1B23DDCF5F008E8A16 /* Travis-CI */,
 				1177EF3223DDCF63008E8A16 /* Travis-CITests */,
 				1177EF3D23DDCF63008E8A16 /* Travis-CIUITests */,
 				1177EF1A23DDCF5F008E8A16 /* Products */,
+				065A48EA13CD2C5C93AA37BE /* Pods */,
+				149B78A8F0B85C6DC08D01E5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +163,14 @@
 			path = "Travis-CIUITests";
 			sourceTree = "<group>";
 		};
+		149B78A8F0B85C6DC08D01E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1177EF4323DDCF63008E8A16 /* Build configuration list for PBXNativeTarget "Travis-CI" */;
 			buildPhases = (
+				892BC5AC30173C50D5E08E5D /* [CP] Check Pods Manifest.lock */,
 				1177EF1523DDCF5F008E8A16 /* Sources */,
 				1177EF1623DDCF5F008E8A16 /* Frameworks */,
 				1177EF1723DDCF5F008E8A16 /* Resources */,
@@ -251,6 +278,7 @@
 			files = (
 				1177EF2923DDCF63008E8A16 /* LaunchScreen.storyboard in Resources */,
 				1177EF2623DDCF63008E8A16 /* Preview Assets.xcassets in Resources */,
+				113EF64F23F8277F007DD545 /* Podfile in Resources */,
 				1177EF2323DDCF63008E8A16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +299,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		892BC5AC30173C50D5E08E5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Travis-CI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1177EF1523DDCF5F008E8A16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1177EF3423DDCF63008E8A16 /* Travis_CITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1177EF3F23DDCF63008E8A16 /* Travis_CIUITests.swift in Sources */,
+				113D314023F82A39009D582E /* Travis_CIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +496,7 @@
 		};
 		1177EF4423DDCF63008E8A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542C4F1BCD79E937943FAA4B /* Pods-Travis-CI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +518,7 @@
 		};
 		1177EF4523DDCF63008E8A16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B70867A8AAEBF83E89455B1 /* Pods-Travis-CI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

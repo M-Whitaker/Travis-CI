@@ -51,7 +51,7 @@ class NetworkManager: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("3", forHTTPHeaderField: "Travis-APßI-Version")
+        request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else { print(error!); return }
             guard let data = data else { print("No data"); return }

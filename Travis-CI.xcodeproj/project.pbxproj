@@ -21,6 +21,7 @@
 		11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */; };
 		11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA323F8AFA500AAF5A4 /* User.swift */; };
 		11C41EA823F8BC9F00AAF5A4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */; };
+		11C41EAA23F8D1E600AAF5A4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */; };
 		11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */; };
 		CD2516FEBD8ADE804FD1DDFF /* libPods-Travis-CI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoScreen.swift; sourceTree = "<group>"; };
 		11C41EA323F8AFA500AAF5A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildDetailView.swift; sourceTree = "<group>"; };
 		3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travis-CI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B70867A8AAEBF83E89455B1 /* Pods-Travis-CI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travis-CI.release.xcconfig"; path = "Target Support Files/Pods-Travis-CI/Pods-Travis-CI.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
 				1177EF2423DDCF63008E8A16 /* Preview Content */,
 				11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */,
+				11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */,
 			);
 			path = "Travis-CI";
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				11C41EA023F8AEC000AAF5A4 /* Repository.swift in Sources */,
 				11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */,
 				1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */,
+				11C41EAA23F8D1E600AAF5A4 /* LoadingView.swift in Sources */,
 				1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */,
 				11C41EA823F8BC9F00AAF5A4 /* SafariView.swift in Sources */,
 				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,

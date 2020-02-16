@@ -11,67 +11,77 @@ import SwiftUIRefresh
 
 struct HomeView: View {
     @ObservedObject var networkManager = NetworkManager()
-    @State private var isShowing = false
+    @State private var isShowing = true
+    
     var body: some View {
             NavigationView {
-                List {
-                    Section(header: Text("Favs")) {
-                        ForEach(networkManager.repos) { repo in
-                            if repo.starred {
-                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
-                                        .navigationBarTitle(Text(repo.name))) {
-                                RepoBuildView(repo: repo)
-                                   .contextMenu {
-                                       Button(action: {
-                                           // change country setting
-                                       }) {
-                                        Text("Repo URL")
-                                        Image(systemName: "globe")
-                                       }
+                if networkManager.loadingState == .loaded {
+                    List {
+                        Section(header: Text("Favs").font(.largeTitle)) {
+                            ForEach(networkManager.repos) { repo in
+                                if repo.starred {
+                                    NavigationLink(destination: RepoBuildDetailView(repo: repo)
+                                            .navigationBarTitle(Text(repo.name))) {
+                                    RepoBuildView(repo: repo)
+                                       .contextMenu {
+                                           Button(action: {
+                                               // change country setting
+                                           }) {
+                                            Text("Repo URL")
+                                            Image(systemName: "globe")
+                                           }
 
-                                       Button(action: {
-                                           // enable geolocation
-                                       }) {
-                                           Text("Detect Location")
-                                           Image(systemName: "location.circle")
+                                           Button(action: {
+                                               // enable geolocation
+                                           }) {
+                                               Text("Detect Location")
+                                               Image(systemName: "location.circle")
+                                           }
                                        }
-                                   }
+                                    }
                                 }
                             }
                         }
-                    }
-                    Section(header: Text("Other")) {
-                        ForEach(networkManager.repos) { repo in
-                            if !repo.starred {
-                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
-                                        .navigationBarTitle(Text(repo.name))) {
-                                RepoBuildView(repo: repo)
-                                   .contextMenu {
-                                       Button(action: {
-                                        // summon the Safari sheet
-                                       }) {
-                                        Text("Repo URL")
-                                        Image(systemName: "globe")
-                                       }
+                        Section(header: Text("Other").font(.largeTitle)) {
+                            ForEach(networkManager.repos) { repo in
+                                if !repo.starred {
+                                    NavigationLink(destination: RepoBuildDetailView(repo: repo)
+                                            .navigationBarTitle(Text(repo.name))) {
+                                    RepoBuildView(repo: repo)
+                                       .contextMenu {
+                                           Button(action: {
+                                            // summon the Safari sheet
+                                           }) {
+                                            Text("Repo URL")
+                                            Image(systemName: "globe")
+                                           }
 
-                                       Button(action: {
-                                           // enable geolocation
-                                       }) {
-                                           Text("Detect Location")
-                                           Image(systemName: "location.circle")
+                                           Button(action: {
+                                               // enable geolocation
+                                           }) {
+                                               Text("Detect Location")
+                                               Image(systemName: "location.circle")
+                                           }
                                        }
-                                   }
+                                    }
                                 }
                             }
                         }
-                    }
-                }.listStyle(GroupedListStyle())
-                    .pullToRefresh(isShowing: $isShowing) {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.isShowing = false
+                    }.listStyle(GroupedListStyle())
+                        .pullToRefresh(isShowing: $isShowing) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.isShowing = false
+                            }
                         }
-                    }
-            .navigationBarTitle(Text("Repositories"))
+                    .navigationBarTitle(Text("Repositories"))
+                } else if networkManager.loadingState == .loading {
+                    LoadingView()
+                    .navigationBarTitle(Text("Repositories"))
+                } else {
+                    Text("Error Connecting to API")
+                    .navigationBarTitle(Text("Repositories"))
+                }
+            
             }
     }
 }

@@ -10,7 +10,13 @@ import SwiftUI
 import Combine
 
 class NetworkManager: ObservableObject {
+    
+    enum LoadingState {
+        case loading, loaded, failed
+    }
+    
     @Published var repos:[Repository] = [Repository]()
+    @Published var loadingState = LoadingState.loading
 
     func getRepos() {
         let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
@@ -19,9 +25,16 @@ class NetworkManager: ObservableObject {
         request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
         request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil else { print(error!); return }
-            guard let data = data else { print("No data"); return }
-        //    print(response)
+            guard error == nil else {
+                print(error!)
+                return
+                
+            }
+            guard let data = data else {
+                print("No data")
+                return
+                
+            }
             
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -30,8 +43,8 @@ class NetworkManager: ObservableObject {
 //            dump(repos)
             DispatchQueue.main.async {
                 self.repos = result.repositories
+                self.loadingState = .loaded
             }
-            print("Finished")
             
         }.resume()
     }
@@ -55,10 +68,10 @@ struct ContentView: View {
                     Text("Search")
                 }.tag(1)
             Text("Profile View")
-            .tabItem {
-                Image(systemName: "person")
-                Text("Profile")
-            }.tag(2)
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }.tag(2)
         }
     }
 }

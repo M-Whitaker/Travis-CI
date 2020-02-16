@@ -12,6 +12,7 @@ import SwiftUIRefresh
 struct HomeView: View {
     @ObservedObject var networkManager = NetworkManager()
     @State private var isShowing = true
+    @State private var showingSafariVC = false
     
     var body: some View {
             NavigationView {
@@ -25,10 +26,12 @@ struct HomeView: View {
                                     RepoBuildView(repo: repo)
                                        .contextMenu {
                                            Button(action: {
-                                               // change country setting
+                                                self.showingSafariVC.toggle()
                                            }) {
                                             Text("Repo URL")
                                             Image(systemName: "globe")
+                                           }.sheet(isPresented: self.$showingSafariVC) {
+                                            SafariView(repo: repo)
                                            }
 
                                            Button(action: {
@@ -50,10 +53,12 @@ struct HomeView: View {
                                     RepoBuildView(repo: repo)
                                        .contextMenu {
                                            Button(action: {
-                                            // summon the Safari sheet
+                                                self.showingSafariVC.toggle()
                                            }) {
                                             Text("Repo URL")
                                             Image(systemName: "globe")
+                                           }.sheet(isPresented: self.$showingSafariVC) {
+                                            SafariView(repo: repo)
                                            }
 
                                            Button(action: {

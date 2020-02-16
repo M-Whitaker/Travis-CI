@@ -17,6 +17,10 @@
 		1177EF2623DDCF63008E8A16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2523DDCF63008E8A16 /* Preview Assets.xcassets */; };
 		1177EF2923DDCF63008E8A16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */; };
 		1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */; };
+		11C41EA023F8AEC000AAF5A4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41E9F23F8AEC000AAF5A4 /* Repository.swift */; };
+		11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */; };
+		11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA323F8AFA500AAF5A4 /* User.swift */; };
+		11C41EA823F8BC9F00AAF5A4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */; };
 		11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */; };
 		CD2516FEBD8ADE804FD1DDFF /* libPods-Travis-CI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		1177EF3E23DDCF63008E8A16 /* Travis_CIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travis_CIUITests.swift; sourceTree = "<group>"; };
 		1177EF4023DDCF63008E8A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildView.swift; sourceTree = "<group>"; };
+		11C41E9F23F8AEC000AAF5A4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoScreen.swift; sourceTree = "<group>"; };
+		11C41EA323F8AFA500AAF5A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildDetailView.swift; sourceTree = "<group>"; };
 		3083856A8D756CD7D08E6994 /* libPods-Travis-CI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Travis-CI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B70867A8AAEBF83E89455B1 /* Pods-Travis-CI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travis-CI.release.xcconfig"; path = "Target Support Files/Pods-Travis-CI/Pods-Travis-CI.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,16 +131,19 @@
 		1177EF1B23DDCF5F008E8A16 /* Travis-CI */ = {
 			isa = PBXGroup;
 			children = (
+				11C41E9E23F8AE9A00AAF5A4 /* Models */,
 				1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */,
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
 				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
 				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
 				113EF64C23F8247B007DD545 /* Constants.swift */,
+				11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
 				1177EF2423DDCF63008E8A16 /* Preview Content */,
+				11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */,
 			);
 			path = "Travis-CI";
 			sourceTree = "<group>";
@@ -161,6 +172,15 @@
 				1177EF4023DDCF63008E8A16 /* Info.plist */,
 			);
 			path = "Travis-CIUITests";
+			sourceTree = "<group>";
+		};
+		11C41E9E23F8AE9A00AAF5A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11C41E9F23F8AEC000AAF5A4 /* Repository.swift */,
+				11C41EA323F8AFA500AAF5A4 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		149B78A8F0B85C6DC08D01E5 /* Frameworks */ = {
@@ -329,9 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C41EA023F8AEC000AAF5A4 /* Repository.swift in Sources */,
+				11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */,
 				1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */,
 				1177EF1F23DDCF5F008E8A16 /* SceneDelegate.swift in Sources */,
+				11C41EA823F8BC9F00AAF5A4 /* SafariView.swift in Sources */,
 				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,
+				11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
 				113EF64D23F8247B007DD545 /* Constants.swift in Sources */,

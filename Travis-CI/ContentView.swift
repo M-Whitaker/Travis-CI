@@ -7,42 +7,7 @@
 //
 
 import SwiftUI
-import SwiftUIRefresh
 import Combine
-
-struct Build: Identifiable, Codable {
-    var id: Int
-    var number: String
-    var state: String
-//    var duration: Int
-//    var startedAt: String
-//    var finishedAt: String
-}
-
-struct Branch: Codable {
-//    var id: Int
-    var name: String
-    var lastBuild: Build?
-//    var updatedAt: String
-    
-}
-
-struct Repository: Identifiable, Codable {
-    var id: Int
-    var name: String
-    var slug: String
-    var description: String?
-    var starred: Bool
-    var defaultBranch: Branch?
-    var active: Bool
-//    var buildNo: Int
-//    var duration: Int
-//    var Finished: Int
-}
-
-struct Result: Codable {
-    var repositories: [Repository]
-}
 
 class NetworkManager: ObservableObject {
     @Published var repos:[Repository] = [Repository]()
@@ -95,74 +60,6 @@ struct ContentView: View {
                 Text("Profile")
             }.tag(2)
         }
-    }
-}
-
-
-struct HomeView: View {
-    @ObservedObject var networkManager = NetworkManager()
-    @State private var isShowing = false
-    var body: some View {
-            NavigationView {
-                List {
-                    Section(header: Text("Favs")) {
-                        ForEach(networkManager.repos) { repo in
-                            if repo.starred {
-                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
-                                        .navigationBarTitle(Text(repo.name))) {
-                                RepoBuildView(repo: repo)
-                                   .contextMenu {
-                                       Button(action: {
-                                           // change country setting
-                                       }) {
-                                        Text("Repo URL")
-                                        Image(systemName: "globe")
-                                       }
-
-                                       Button(action: {
-                                           // enable geolocation
-                                       }) {
-                                           Text("Detect Location")
-                                           Image(systemName: "location.circle")
-                                       }
-                                   }
-                                }
-                            }
-                        }
-                    }
-                    Section(header: Text("Other")) {
-                        ForEach(networkManager.repos) { repo in
-                            if !repo.starred {
-                                NavigationLink(destination: RepoBuildDetailView(repo: repo)
-                                        .navigationBarTitle(Text(repo.name))) {
-                                RepoBuildView(repo: repo)
-                                   .contextMenu {
-                                       Button(action: {
-                                           // change country setting
-                                       }) {
-                                        Text("Repo URL")
-                                        Image(systemName: "globe")
-                                       }
-
-                                       Button(action: {
-                                           // enable geolocation
-                                       }) {
-                                           Text("Detect Location")
-                                           Image(systemName: "location.circle")
-                                       }
-                                   }
-                                }
-                            }
-                        }
-                    }
-                }.listStyle(GroupedListStyle())
-                    .pullToRefresh(isShowing: $isShowing) {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.isShowing = false
-                        }
-                    }
-            .navigationBarTitle(Text("Repositories"))
-            }
     }
 }
 

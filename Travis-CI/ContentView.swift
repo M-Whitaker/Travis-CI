@@ -23,7 +23,7 @@ class NetworkManager: ObservableObject {
     @Published var loadingState = LoadingState.loading
 
     func getRepos() {
-        let url = URL(string: "https://api.travis-ci.com/repos?include=branch.last_build")!
+        let url = URL(string: baseURL + "/repos?include=branch.last_build")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
@@ -40,14 +40,20 @@ class NetworkManager: ObservableObject {
                 
             }
             
+            let httpResponse = response as? HTTPURLResponse
+            
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-
-            let result = try! decoder.decode(Result.self, from: data)
+            
+            let result = try? decoder.decode(Result.self, from: data)
 //            dump(repos)
             DispatchQueue.main.async {
-                self.repos = result.repositories
-                self.loadingState = .loaded
+                if httpResponse?.statusCode == 200 {
+                    self.repos = result!.repositories
+                    self.loadingState = .loaded
+                } else {
+                    self.loadingState = .failed
+                }
             }
             
         }.resume()
@@ -122,6 +128,7 @@ struct ContentView: View {
                     .clipShape(Capsule())
                 }
             }
+            .onAppear { self.authenticate() }
         }
     
     func authenticate() {
@@ -142,7 +149,7 @@ struct ContentView: View {
                 }
             }
         } else {
-            // no biometrics
+            // no biometrics - redirect to pin code
         }
     }
 }

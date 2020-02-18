@@ -128,7 +128,11 @@ struct ContentView: View {
                     .clipShape(Capsule())
                 }
             }
-            .onAppear { self.authenticate() }
+            .onAppear {
+                if self.settingsVM.authEnabled {
+                    self.authenticate()
+                }
+            }
         }
     
     func authenticate() {

@@ -102,7 +102,10 @@ struct ContentView: View {
     
     var body: some View {
             TabView {
-                if isUnlocked || settingsVM.authEnabled == false {
+                if settingsVM.token == "" {
+                    LoginView()
+                }
+                else if isUnlocked || settingsVM.authEnabled == false {
                     HomeView()
                         .tabItem {
                             Image(systemName: "tray.full.fill")

@@ -103,7 +103,7 @@ struct ContentView: View {
     var body: some View {
             TabView {
                 if settingsVM.token == "" {
-                    LoginView()
+                    AuthView()
                 }
                 else if isUnlocked || settingsVM.authEnabled == false {
                     HomeView()

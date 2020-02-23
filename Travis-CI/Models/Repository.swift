@@ -8,13 +8,23 @@
 
 import Foundation
 
+struct Commit: Codable {
+    var id: Int
+    var sha: String
+    var ref: String
+    var message: String
+    var compareUrl: String
+    var committedAt: String
+}
+
 struct Build: Identifiable, Codable {
     var id: Int
     var number: String
     var state: String
-//    var duration: Int
-//    var startedAt: String
-//    var finishedAt: String
+    var duration: Int
+    var startedAt: String
+    var finishedAt: String
+    var commit: Commit
 }
 
 struct Branch: Codable {
@@ -31,11 +41,9 @@ struct Repository: Identifiable, Codable {
     var slug: String
     var description: String?
     var starred: Bool
-    var defaultBranch: Branch?
+    var defaultBranch: Branch
     var active: Bool
 //    var buildNo: Int
-//    var duration: Int
-//    var Finished: Int
 }
 
 struct Result: Codable {

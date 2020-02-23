@@ -12,8 +12,8 @@ struct RepoBuildView: View {
     let repo: Repository
     
     func isPassing() -> Bool {
-        if repo.defaultBranch?.lastBuild != nil {
-            if repo.defaultBranch?.lastBuild?.state == "passed" {
+        if repo.defaultBranch.lastBuild != nil {
+            if repo.defaultBranch.lastBuild?.state == "passed" {
                 return true
             } else {
                 return false
@@ -25,29 +25,25 @@ struct RepoBuildView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if repo.defaultBranch?.lastBuild != nil {
+            if repo.defaultBranch.lastBuild != nil {
                     HStack {
                         Image(systemName: isPassing() ? "checkmark" : "exclamationmark")
                         Text(repo.slug)
                         Spacer()
                         HStack {
                             Image(systemName: "number")
-                            Text(repo.defaultBranch?.lastBuild?.number ?? "0")
+                            Text(repo.defaultBranch.lastBuild?.number ?? "0")
                         }
                     }.foregroundColor(isPassing() ? .green : .yellow)
-                    Text("Default Branch: \(repo.defaultBranch?.name ?? "-") Last Build: \(repo.defaultBranch?.lastBuild?.state ?? "Not ran yet")" )
+                Text("Default Branch: \(repo.defaultBranch.name ) Last Build: \(repo.defaultBranch.lastBuild?.state ?? "Not ran yet")" )
                     HStack {
-                        Image(systemName: "clock")
-                        Text("Duration: About an hour ago")
+                        Image(systemName: "calendar")
+                        Text("Finished: About an hour ago")
                         Spacer()
                         if repo.starred {
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
                         }
-                    }
-                    HStack {
-                        Image(systemName: "calendar")
-                        Text("Finished: About an hour ago")
                     }
             } else {
                 Text(repo.slug)
@@ -56,8 +52,8 @@ struct RepoBuildView: View {
     }
 }
 
-struct RepoBuildView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepoBuildView(repo: Repository(id: 3, name: "repo2", slug: "matt43121/repo2", starred: true, defaultBranch: Branch(name: "Master", lastBuild: Build(id: 1, number: "2", state: "passed")), active: false))
-    }
-}
+//struct RepoBuildView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RepoBuildView(repo: Repository(id: 3, name: "repo2", slug: "matt43121/repo2", starred: true, defaultBranch: Branch(name: "Master", lastBuild: Build(id: 1, number: "2", state: "passed", duration: 53, startedAt: "", finishedAt: "")), active: false))
+//    }
+//}

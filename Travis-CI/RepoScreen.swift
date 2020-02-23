@@ -47,7 +47,7 @@ struct HomeView: View {
                         }
                         Section(header: Text("Other").font(.largeTitle)) {
                             ForEach(networkManager.repos) { repo in
-                                if !repo.starred {
+                                if !repo.starred && repo.defaultBranch.lastBuild != nil {
                                     NavigationLink(destination: RepoBuildDetailView(repo: repo)
                                             .navigationBarTitle(Text(repo.name))) {
                                     RepoBuildView(repo: repo)
@@ -78,13 +78,13 @@ struct HomeView: View {
                                 self.isShowing = false
                             }
                         }
-                    .navigationBarTitle(Text("Repositories"))
+                    .navigationBarTitle("Repositories")
                 } else if networkManager.loadingState == .loading {
                     LoadingView()
-                    .navigationBarTitle(Text("Repositories"))
+                    .navigationBarTitle("Repositories")
                 } else {
                     Text("Error Connecting to API")
-                    .navigationBarTitle(Text("Repositories"))
+                    .navigationBarTitle("Repositories")
                 }
             
             }

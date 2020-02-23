@@ -2,7 +2,7 @@
 //  TodayViewController.swift
 //  TCI Widget
 //
-//  Created by Adrian Whitaker on 17/02/2020.
+//  Created by Matt Whitaker on 17/02/2020.
 //  Copyright © 2020 Matt Whitaker. All rights reserved.
 //
 

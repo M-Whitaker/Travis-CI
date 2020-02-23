@@ -11,28 +11,24 @@ import SwiftUI
 struct AuthView: View {
     
     @ObservedObject var SettingsVM = Settings()
+    @Binding var signInSuccess: Bool
     
     var body: some View {
             VStack {
                 Image("travis-ci-logo")
                     .resizable()
                     .frame(width: 400, height: 300)
+                Text("https://travis-ci.com/account/preferences")
                 Spacer()
                 HStack {
                     Text("Travis-CI Token")
                     TextField("Token", text: $SettingsVM.token)
                 }
                 .padding()
-                NavigationLink(destination: ContentView()) {
-                    Text("push view")
+                if SettingsVM.token != "" {
+                    Button("Login") { self.signInSuccess = true }
                 }
                 Spacer()
             }
-    }
-}
-
-struct AuthView_Previews: PreviewProvider {
-    static var previews: some View {
-        AuthView()
     }
 }

@@ -14,6 +14,11 @@ class Settings: ObservableObject {
             UserDefaults.standard.set(self.authEnabled, forKey: "authEnabled")
         }
     }
+    @Published var signInSuccess: Bool = UserDefaults.standard.bool(forKey: "signInSuccess") {
+        didSet {
+            UserDefaults.standard.set(self.signInSuccess, forKey: "signInSuccess")
+        }
+    }
     @Published var token: String = UserDefaults.standard.string(forKey: "token") ?? "" {
         didSet {
             UserDefaults.standard.set(self.token, forKey: "token")

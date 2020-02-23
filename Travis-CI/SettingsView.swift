@@ -10,7 +10,9 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var SettingsVM = Settings()
+    @ObservedObject var networkManager = NetworkManager()
     @State var tokenHidden:Bool = true
+    @Binding var signInSuccess: Bool
     
     var body: some View {
         NavigationView{
@@ -31,6 +33,10 @@ struct SettingsView: View {
                             self.tokenHidden.toggle()
                         }
                     }
+                    Section {
+                        Button("Logout") { self.signInSuccess = false }
+                            .foregroundColor(.red)
+                    }
                 }
             }
             
@@ -39,8 +45,3 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}

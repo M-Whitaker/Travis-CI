@@ -11,7 +11,7 @@ import SwiftUIRefresh
 
 struct HomeView: View {
     @ObservedObject var networkManager = NetworkManager()
-    @State private var isShowing = true
+    @State private var isShowing = false
     @State private var showingSafariVC = false
     
     var body: some View {

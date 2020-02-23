@@ -76,13 +76,17 @@ class NetworkManager: ObservableObject {
                 
             }
             
+            let httpResponse = response as? HTTPURLResponse
+            
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-            let user = try! decoder.decode(User.self, from: data)
+            let user = try? decoder.decode(User.self, from: data)
 //            dump(user)
             DispatchQueue.main.async {
-                self.user = [user]
+                if httpResponse?.statusCode == 200 {
+                    self.user = [user!]
+                }
             }
             
         }.resume()

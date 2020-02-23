@@ -80,7 +80,7 @@ class NetworkManager: ObservableObject {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             let user = try! decoder.decode(User.self, from: data)
-            dump(user)
+//            dump(user)
             DispatchQueue.main.async {
                 self.user = [user]
             }

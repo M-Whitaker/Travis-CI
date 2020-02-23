@@ -19,18 +19,18 @@ class NetworkManager: ObservableObject {
     }
     
     @Published var repos:[Repository] = [Repository]()
-//    @Published var user:User = User
+    @Published var user:[User] = [User]()
     @Published var loadingState = LoadingState.loading
 
     func getRepos() {
         let url = URL(string: baseURL + "/repos?include=branch.last_build")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("token \(SettingsVM.token)", forHTTPHeaderField: "Authorization")
         request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
-                print(error!)
+                print(error as Any)
                 return
                 
             }
@@ -62,11 +62,11 @@ class NetworkManager: ObservableObject {
         let url = URL(string: "https://api.travis-ci.com/user")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("token \(SettingsVM.token)", forHTTPHeaderField: "Authorization")
         request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil else {
-                print(error!)
+                print(error as Any)
                 return
                 
             }
@@ -80,9 +80,9 @@ class NetworkManager: ObservableObject {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             let user = try! decoder.decode(User.self, from: data)
-            dump(user)
+//            dump(user)
             DispatchQueue.main.async {
-//                self.user = user
+                self.user = [user]
             }
             
         }.resume()
@@ -90,7 +90,7 @@ class NetworkManager: ObservableObject {
     
     init() {
         getRepos()
-//        getUser()
+        getUser()
     }
 }
         
@@ -102,7 +102,10 @@ struct ContentView: View {
     
     var body: some View {
             TabView {
-                if isUnlocked || settingsVM.authEnabled == false {
+                if settingsVM.signInSuccess == false {
+                    AuthView(signInSuccess: $settingsVM.signInSuccess)
+                }
+                else if isUnlocked || settingsVM.authEnabled == false {
                     HomeView()
                         .tabItem {
                             Image(systemName: "tray.full.fill")
@@ -113,7 +116,7 @@ struct ContentView: View {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
                         }.tag(1)
-                    SettingsView()
+                    SettingsView(signInSuccess: $settingsVM.signInSuccess)
                         .tabItem {
                             Image(systemName: "person")
                             Text("Profile")

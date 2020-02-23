@@ -13,6 +13,7 @@ struct SettingsView: View {
     @ObservedObject var SettingsVM = Settings()
     @ObservedObject var networkManager = NetworkManager()
     @State var tokenHidden:Bool = true
+    @State private var showingAlert = false
     @Binding var signInSuccess: Bool
     
     var body: some View {
@@ -34,8 +35,14 @@ struct SettingsView: View {
                         }
                     }
                     Section {
-                        Button("Logout") { self.signInSuccess = false }
+                        Button("Logout") { self.showingAlert = true }
                             .foregroundColor(.red)
+                            .alert(isPresented:$showingAlert) {
+                                Alert(title: Text("Are you sure?"), message: Text("When logging out your token will be cleared"), primaryButton: .destructive(Text("Logout")) {
+                                        self.signInSuccess = false
+                                }, secondaryButton: .cancel())
+                            
+                            }
                     }
                 }
             }

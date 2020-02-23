@@ -144,9 +144,25 @@
 		11197396240338D90075887B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */,
 				11197397240339130075887B /* TimeConversion.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		11197399240344DA0075887B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */,
+				11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */,
+				11DE48FE23FA0A97005AAB68 /* SearchView.swift */,
+				11DE490223FA153C005AAB68 /* SettingsView.swift */,
+				1188468B23FCA5DF008A4732 /* LoginView.swift */,
+				11EE93E424013B1300685056 /* AuthView.swift */,
+				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
+				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		116FCC3023FB5F17002DFCF3 /* TCI Widget */ = {
@@ -185,21 +201,13 @@
 		1177EF1B23DDCF5F008E8A16 /* Travis-CI */ = {
 			isa = PBXGroup;
 			children = (
+				11197399240344DA0075887B /* Views */,
 				11197396240338D90075887B /* Utils */,
 				11C41E9E23F8AE9A00AAF5A4 /* Models */,
 				1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */,
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
-				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
-				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
 				113EF64C23F8247B007DD545 /* Constants.swift */,
-				11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */,
-				11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */,
-				11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */,
-				11DE48FE23FA0A97005AAB68 /* SearchView.swift */,
-				11DE490223FA153C005AAB68 /* SettingsView.swift */,
-				1188468B23FCA5DF008A4732 /* LoginView.swift */,
-				11EE93E424013B1300685056 /* AuthView.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,

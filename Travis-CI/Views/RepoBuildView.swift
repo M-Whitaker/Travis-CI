@@ -38,7 +38,7 @@ struct RepoBuildView: View {
                 Text("Default Branch: \(repo.defaultBranch.name ) Last Build: \(repo.defaultBranch.lastBuild?.state ?? "Not ran yet")" )
                     HStack {
                         Image(systemName: "calendar")
-                        Text("Finished: About an hour ago")
+                        Text("Finished about \(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())")
                         Spacer()
                         if repo.starred {
                         Image(systemName: "star.fill")

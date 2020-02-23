@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftUIRefresh
 
 struct HomeView: View {
     @ObservedObject var networkManager = NetworkManager()
@@ -31,7 +30,7 @@ struct HomeView: View {
                                             Text("Repo URL")
                                             Image(systemName: "globe")
                                            }.sheet(isPresented: self.$showingSafariVC) {
-                                            SafariView(repo: repo)
+                                            SafariView(url: "https://github.com/\(repo.slug)")
                                            }
 
                                            Button(action: {
@@ -58,7 +57,7 @@ struct HomeView: View {
                                             Text("Repo URL")
                                             Image(systemName: "globe")
                                            }.sheet(isPresented: self.$showingSafariVC) {
-                                            SafariView(repo: repo)
+                                            SafariView(url: "https://github.com/\(repo.slug)")
                                            }
 
                                            Button(action: {
@@ -72,12 +71,7 @@ struct HomeView: View {
                                 }
                             }
                         }
-                    }.listStyle(GroupedListStyle())
-                        .pullToRefresh(isShowing: $isShowing) {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                self.isShowing = false
-                            }
-                        }
+                    }
                     .navigationBarTitle("Repositories")
                 } else if networkManager.loadingState == .loading {
                     LoadingView()

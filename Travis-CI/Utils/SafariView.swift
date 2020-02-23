@@ -10,10 +10,10 @@ import SwiftUI
 import SafariServices
 
 struct SafariView: UIViewControllerRepresentable {
-    let repo: Repository
+    let url: String
 
     func makeUIViewController(context: Context) -> SFSafariViewController {
-        let safariVC: SFSafariViewController = SFSafariViewController(url: URL(string: "https://github.com/" + repo.slug)!)
+        let safariVC: SFSafariViewController = SFSafariViewController(url: URL(string: url)!)
         return safariVC
     }
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {

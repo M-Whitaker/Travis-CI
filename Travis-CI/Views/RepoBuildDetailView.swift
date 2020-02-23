@@ -11,21 +11,11 @@ import SwiftUI
 struct RepoBuildDetailView: View {
     let repo: Repository
     
-    func convertTime(isoDate: String) -> Date{
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = dateFormatter.date(from:isoDate)!
-        
-        return date
-    }
-    
     var body: some View {
         VStack {
             Text(String(repo.defaultBranch.lastBuild?.duration ?? 0))
-            Text(repo.defaultBranch.lastBuild?.startedAt ?? "")
             Text(repo.defaultBranch.lastBuild?.finishedAt ?? "")
+            Text(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())
             Text(repo.defaultBranch.lastBuild?.commit.compareUrl ?? "")
         }
     }

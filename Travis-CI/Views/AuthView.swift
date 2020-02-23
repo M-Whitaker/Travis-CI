@@ -19,16 +19,10 @@ struct AuthView: View {
                     .resizable()
                     .frame(width: 400, height: 300)
                 Text("https://travis-ci.com/account/preferences")
-                Spacer()
-                HStack {
-                    Text("Travis-CI Token")
-                    TextField("Token", text: $SettingsVM.token)
-                }
-                .padding()
-                if SettingsVM.token != "" {
-                    Button("Login") { self.signInSuccess = true }
-                }
-                Spacer()
+                TextField("Token", text: $SettingsVM.token)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                Button("Login") { self.signInSuccess = true }
             }
     }
 }

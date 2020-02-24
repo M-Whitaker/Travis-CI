@@ -20,8 +20,8 @@ final internal class LoginView: NSObject, UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        let request = URLRequest(url: URL(string: "https://github.com/login/oauth/authorize?client_id=\(clientId)")!)
-        uiView.load(request)
+//        let request = URLRequest(url: URL(string: "https://github.com/login/oauth/authorize?client_id=\(clientId)")!)
+//        uiView.load(request)
     }
 
 }

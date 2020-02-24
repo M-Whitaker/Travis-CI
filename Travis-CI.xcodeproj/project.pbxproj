@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11197398240339130075887B /* TimeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11197397240339130075887B /* TimeConversion.swift */; };
-		113EF64D23F8247B007DD545 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113EF64C23F8247B007DD545 /* Constants.swift */; };
+		111973AF24034D550075887B /* Travis_CIUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111973AE24034D550075887B /* Travis_CIUnitTests.swift */; };
 		116FCC2F23FB5F17002DFCF3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116FCC2E23FB5F17002DFCF3 /* NotificationCenter.framework */; };
 		116FCC3223FB5F17002DFCF3 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FCC3123FB5F17002DFCF3 /* TodayViewController.swift */; };
 		116FCC3523FB5F17002DFCF3 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116FCC3323FB5F17002DFCF3 /* MainInterface.storyboard */; };
@@ -34,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		111973B124034D550075887B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1177EF1123DDCF5F008E8A16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1177EF1823DDCF5F008E8A16;
+			remoteInfo = "Travis-CI";
+		};
 		116FCC3723FB5F17002DFCF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1177EF1123DDCF5F008E8A16 /* Project object */;
@@ -59,7 +66,9 @@
 
 /* Begin PBXFileReference section */
 		11197397240339130075887B /* TimeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversion.swift; sourceTree = "<group>"; };
-		113EF64C23F8247B007DD545 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		111973AC24034D550075887B /* Travis-CIUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Travis-CIUnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		111973AE24034D550075887B /* Travis_CIUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travis_CIUnitTests.swift; sourceTree = "<group>"; };
+		111973B024034D550075887B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		116FCC2D23FB5F17002DFCF3 /* TCI Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TCI Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		116FCC2E23FB5F17002DFCF3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		116FCC3123FB5F17002DFCF3 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +97,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		111973A924034D550075887B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		116FCC2A23FB5F17002DFCF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +146,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		111973AD24034D550075887B /* Travis-CIUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				111973AE24034D550075887B /* Travis_CIUnitTests.swift */,
+				111973B024034D550075887B /* Info.plist */,
+			);
+			path = "Travis-CIUnitTests";
+			sourceTree = "<group>";
+		};
 		116FCC3023FB5F17002DFCF3 /* TCI Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +170,7 @@
 			children = (
 				1177EF1B23DDCF5F008E8A16 /* Travis-CI */,
 				116FCC3023FB5F17002DFCF3 /* TCI Widget */,
+				111973AD24034D550075887B /* Travis-CIUnitTests */,
 				1177EF1A23DDCF5F008E8A16 /* Products */,
 				149B78A8F0B85C6DC08D01E5 /* Frameworks */,
 			);
@@ -155,6 +181,7 @@
 			children = (
 				1177EF1923DDCF5F008E8A16 /* Travis-CI.app */,
 				116FCC2D23FB5F17002DFCF3 /* TCI Widget.appex */,
+				111973AC24034D550075887B /* Travis-CIUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +195,6 @@
 				1177EF1C23DDCF5F008E8A16 /* AppDelegate.swift */,
 				1177EF1E23DDCF5F008E8A16 /* SceneDelegate.swift */,
 				1177EF2023DDCF5F008E8A16 /* ContentView.swift */,
-				113EF64C23F8247B007DD545 /* Constants.swift */,
 				1177EF2223DDCF63008E8A16 /* Assets.xcassets */,
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
@@ -206,6 +232,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		111973AB24034D550075887B /* Travis-CIUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 111973B324034D550075887B /* Build configuration list for PBXNativeTarget "Travis-CIUnitTests" */;
+			buildPhases = (
+				111973A824034D550075887B /* Sources */,
+				111973A924034D550075887B /* Frameworks */,
+				111973AA24034D550075887B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				111973B224034D550075887B /* PBXTargetDependency */,
+			);
+			name = "Travis-CIUnitTests";
+			productName = "Travis-CIUnitTests";
+			productReference = 111973AC24034D550075887B /* Travis-CIUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		116FCC2C23FB5F17002DFCF3 /* TCI Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 116FCC3D23FB5F17002DFCF3 /* Build configuration list for PBXNativeTarget "TCI Widget" */;
@@ -252,6 +296,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Matt Whitaker";
 				TargetAttributes = {
+					111973AB24034D550075887B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1177EF1823DDCF5F008E8A16;
+					};
 					116FCC2C23FB5F17002DFCF3 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -275,11 +323,19 @@
 			targets = (
 				1177EF1823DDCF5F008E8A16 /* Travis-CI */,
 				116FCC2C23FB5F17002DFCF3 /* TCI Widget */,
+				111973AB24034D550075887B /* Travis-CIUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		111973AA24034D550075887B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		116FCC2B23FB5F17002DFCF3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +357,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		111973A824034D550075887B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111973AF24034D550075887B /* Travis_CIUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		116FCC2923FB5F17002DFCF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,13 +393,17 @@
 				11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
-				113EF64D23F8247B007DD545 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		111973B224034D550075887B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1177EF1823DDCF5F008E8A16 /* Travis-CI */;
+			targetProxy = 111973B124034D550075887B /* PBXContainerItemProxy */;
+		};
 		116FCC3823FB5F17002DFCF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 116FCC2C23FB5F17002DFCF3 /* TCI Widget */;
@@ -363,6 +431,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		111973B424034D550075887B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UF5D59LRLU;
+				INFOPLIST_FILE = "Travis-CIUnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.mattwhitaker.Travis-CIUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travis-CI.app/Travis-CI";
+			};
+			name = Debug;
+		};
+		111973B524034D550075887B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UF5D59LRLU;
+				INFOPLIST_FILE = "Travis-CIUnitTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.mattwhitaker.Travis-CIUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travis-CI.app/Travis-CI";
+			};
+			name = Release;
+		};
 		116FCC3B23FB5F17002DFCF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -562,6 +672,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		111973B324034D550075887B /* Build configuration list for PBXNativeTarget "Travis-CIUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111973B424034D550075887B /* Debug */,
+				111973B524034D550075887B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		116FCC3D23FB5F17002DFCF3 /* Build configuration list for PBXNativeTarget "TCI Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

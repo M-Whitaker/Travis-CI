@@ -13,6 +13,7 @@ import Combine
 class NetworkManager: ObservableObject {
     
     @ObservedObject var SettingsVM = Settings()
+    let baseURL = "https://api.travis-ci.com"
     
     enum LoadingState {
         case loading, loaded, failed

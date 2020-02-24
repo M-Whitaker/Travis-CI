@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1177EF2E23DDCF63008E8A16"
+               BlueprintIdentifier = "1119739D24034C5C0075887B"
                BuildableName = "Travis-CITests.xctest"
                BlueprintName = "Travis-CITests"
                ReferencedContainer = "container:Travis-CI.xcodeproj">
@@ -45,6 +45,16 @@
                BlueprintIdentifier = "1177EF3923DDCF63008E8A16"
                BuildableName = "Travis-CIUITests.xctest"
                BlueprintName = "Travis-CIUITests"
+               ReferencedContainer = "container:Travis-CI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "111973AB24034D550075887B"
+               BuildableName = "Travis-CIUnitTests.xctest"
+               BlueprintName = "Travis-CIUnitTests"
                ReferencedContainer = "container:Travis-CI.xcodeproj">
             </BuildableReference>
          </TestableReference>

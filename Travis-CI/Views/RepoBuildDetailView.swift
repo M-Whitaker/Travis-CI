@@ -14,9 +14,17 @@ struct RepoBuildDetailView: View {
     var body: some View {
         VStack {
             Text(String(repo.defaultBranch.lastBuild?.duration ?? 0))
-            Text(repo.defaultBranch.lastBuild?.finishedAt ?? "")
+            Text(convertTime(isoDate: repo.defaultBranch.lastBuild?.finishedAt ?? "").description)
             Text(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())
-            Text(repo.defaultBranch.lastBuild?.commit.compareUrl ?? "")
+            Button(action: {
+
+                let url: NSURL = URL(string: self.repo.defaultBranch.lastBuild?.commit.compareUrl ?? "")! as NSURL
+
+                UIApplication.shared.open(url as URL)
+
+            }) {
+                Text(verbatim: String(repo.defaultBranch.lastBuild?.commit.compareUrl.split(separator: "/")[5] ?? ""))
+            }
         }
     }
 }

@@ -28,6 +28,13 @@ class Travis_CIUnitTests: XCTestCase {
         XCTAssertEqual(fiveMinsAgoDisplay, "5 Minutes Ago")
         XCTAssertEqual(oneMinsAgoDisplay, "1 Minute Ago")
     }
+    
+    func testConvertTime() {
+        let timeStr = "2020-01-17T00:20:10Z"
+        let convertedTimeObj = convertTime(isoDate: timeStr)
+        
+        XCTAssertEqual(String(describing: type(of: convertedTimeObj)), "Date")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

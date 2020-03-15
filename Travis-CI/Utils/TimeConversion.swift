@@ -35,7 +35,7 @@ extension Date {
     }
 }
 
-func convertTime(isoDate: String) -> Date{
+func convertTime(isoDate: String) -> Date {
 
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
@@ -43,4 +43,28 @@ func convertTime(isoDate: String) -> Date{
     let date = dateFormatter.date(from:isoDate)!
     
     return date
+}
+
+/// This function turns seconds into hours, minutes and seconds
+///
+/// Usage:
+///
+///     convertDuration(timeInSeconds: 60) // 0,1,0
+///
+/// - Returns: Three integers of the hours, minutes and seconds of a given input.
+func convertDuration(timeInSeconds: Int) -> (Int, Int, Int) {
+    
+    return (timeInSeconds / 3600, (timeInSeconds % 3600) / 60, (timeInSeconds % 3600) % 60)
+}
+
+func printSecondsToHoursMinutesSeconds (seconds:Int) -> String {
+    
+    let (h, m, s) = convertDuration(timeInSeconds: seconds)
+    if (h != 0) {
+        return ("\(h) h, \(m) m, \(s) s")
+    } else if (m != 0) {
+        return ("\(m) m, \(s) s")
+    } else {
+        return ("\(s) s")
+    }
 }

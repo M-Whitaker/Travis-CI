@@ -35,6 +35,14 @@ class Travis_CIUnitTests: XCTestCase {
         
         XCTAssertEqual(String(describing: type(of: convertedTimeObj)), "Date")
     }
+    
+    func testConvertDuration() {
+        let seconds = 60
+        let (h,m,s) = convertDuration(timeInSeconds: seconds)
+        let timeString = String("\(h) \(m) \(s)")
+        
+        XCTAssertEqual(timeString, "0 1 0")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

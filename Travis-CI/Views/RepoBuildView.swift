@@ -11,15 +11,15 @@ import SwiftUI
 struct RepoBuildView: View {
     let repo: Repository
     
-    func isPassing() -> Bool {
+    func isPassing() -> Dictionary<String, Any> {
         if repo.defaultBranch.lastBuild != nil {
             if repo.defaultBranch.lastBuild?.state == "passed" {
-                return true
+                return ["icon": "checkmark", "colour": Color.green]
             } else {
-                return false
+                return ["icon": "xmark", "colour": Color.red]
             }
         } else {
-            return true
+            return ["icon": "arrow.clockwise", "colour": Color.gray]
         }
     }
     
@@ -27,14 +27,14 @@ struct RepoBuildView: View {
         VStack(alignment: .leading) {
             if repo.defaultBranch.lastBuild != nil {
                     HStack {
-                        Image(systemName: isPassing() ? "checkmark" : "exclamationmark")
+                        Image(systemName: isPassing()["icon"] as! String)
                         Text(repo.slug)
                         Spacer()
                         HStack {
                             Image(systemName: "number")
                             Text(repo.defaultBranch.lastBuild?.number ?? "0")
                         }
-                    }.foregroundColor(isPassing() ? .green : .yellow)
+                    }.foregroundColor(isPassing()["colour"] as? Color)
                 Text("Default Branch: \(repo.defaultBranch.name ) Last Build: \(repo.defaultBranch.lastBuild?.state ?? "Not ran yet")" )
                     HStack {
                         Image(systemName: "calendar")

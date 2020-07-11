@@ -31,6 +31,7 @@
 		11DE490123FA1287005AAB68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE490023FA1287005AAB68 /* Settings.swift */; };
 		11DE490323FA153C005AAB68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE490223FA153C005AAB68 /* SettingsView.swift */; };
 		11EE93E524013B1300685056 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE93E424013B1300685056 /* AuthView.swift */; };
+		7571020B24B93D3F002CEDA1 /* RepoBuildHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571020A24B93D3F002CEDA1 /* RepoBuildHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		11DE490023FA1287005AAB68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		11DE490223FA153C005AAB68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		11EE93E424013B1300685056 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7571020A24B93D3F002CEDA1 /* RepoBuildHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				11EE93E424013B1300685056 /* AuthView.swift */,
 				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
 				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
+				7571020A24B93D3F002CEDA1 /* RepoBuildHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				11D4117123E4E5AA0088A2A0 /* RepoBuildDetailView.swift in Sources */,
 				11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
+				7571020B24B93D3F002CEDA1 /* RepoBuildHistoryView.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF5D59LRLU;
 				INFOPLIST_FILE = "Travis-CIUnitTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF5D59LRLU;
 				INFOPLIST_FILE = "Travis-CIUnitTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF5D59LRLU;
 				INFOPLIST_FILE = "TCI Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UF5D59LRLU;
 				INFOPLIST_FILE = "TCI Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

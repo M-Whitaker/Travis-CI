@@ -13,36 +13,96 @@ struct RepoBuildDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button(action: {
-
-                    let url: NSURL = URL(string: "https://github.com/" + self.repo.slug + "/commit/" + (self.repo.defaultBranch.lastBuild?.commit.sha ?? ""))! as NSURL
-
-                    UIApplication.shared.open(url as URL)
-
-                }) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.white)
+                    .shadow(radius: 10)
+                VStack(alignment: .leading, spacing: 15) {
+                    Text(repo.defaultBranch.lastBuild?.commit.message.split(separator: "\n")[0] ?? "")
+                        .padding(.top, 5)
+                    Spacer()
                     HStack {
-                        Image(systemName: "shuffle")
-                        Text(verbatim: String("Commit " + (repo.defaultBranch.lastBuild?.commit.sha.prefix(7) ?? "") ))
-                        Image(systemName: "shuffle")
+                        Spacer()
+                        Image(systemName: "stopwatch")
+                        Text("Ran for " + printSecondsToHoursMinutesSeconds(seconds: repo.defaultBranch.lastBuild?.duration ?? 0))
+                    }
+                    HStack {
+                        Button(action: {
+
+                            let url: NSURL = URL(string: "https://github.com/" + self.repo.slug + "/commit/" + (self.repo.defaultBranch.lastBuild?.commit.sha ?? ""))! as NSURL
+
+                            UIApplication.shared.open(url as URL)
+
+                        }) {
+                            HStack {
+                                Image(systemName: "shuffle")
+                                Text(verbatim: String("Commit " + (repo.defaultBranch.lastBuild?.commit.sha.prefix(7) ?? "") ))
+                            }
+                            
+                        }
+                        Spacer()
+                        Image(systemName: "calendar")
+                        Text(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())
+                        //Text(convertTime(isoDate: repo.defaultBranch.lastBuild?.finishedAt ?? "").description)
+                    }
+                    Button(action: {
+
+                        let url: NSURL = URL(string: self.repo.defaultBranch.lastBuild?.commit.compareUrl ?? "")! as NSURL
+
+                        UIApplication.shared.open(url as URL)
+
+                    }) {
+                        Text(verbatim: "Compare " + String(repo.defaultBranch.lastBuild?.commit.compareUrl.split(separator: "/")[5] ?? ""))
+                    }
+                    HStack {
+                        Image(systemName: "arrow.branch")
+                        Text("Branch " + repo.defaultBranch.name)
                     }
                     
                 }
-                Text(printSecondsToHoursMinutesSeconds(seconds: repo.defaultBranch.lastBuild?.duration ?? 0))
-                Text("Debug")
+                .padding(10)
+                .multilineTextAlignment(.center)
+                
             }
-            Text(repo.defaultBranch.name)
-            Text(convertTime(isoDate: repo.defaultBranch.lastBuild?.finishedAt ?? "").description)
-            Text(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())
-            Button(action: {
+            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 200)
+            .padding(15)
+            HStack {
+                Button(action: {
+                    
+                    let url: NSURL = URL(string: "https://travis-ci.com/" + self.repo.slug + "/settings/")! as NSURL
 
-                let url: NSURL = URL(string: self.repo.defaultBranch.lastBuild?.commit.compareUrl ?? "")! as NSURL
-
-                UIApplication.shared.open(url as URL)
-
-            }) {
-                Text(verbatim: String(repo.defaultBranch.lastBuild?.commit.compareUrl.split(separator: "/")[5] ?? ""))
+                    UIApplication.shared.open(url as URL)
+                    
+                }) {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Manage")
+                    }
+                    .foregroundColor(Color.blue)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                        .background(Color(UIColor.systemGray5))
+                        .cornerRadius(5)
+                }
+                .padding(.leading, 15)
+                .padding(.trailing, 1)
+                
+                Button(action: {print("Trash Tapped")}) {
+                    VStack {
+                        Image(systemName: "archivebox")
+                        Text("Build History")
+                    }
+                    .foregroundColor(Color.blue)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding()
+                        .background(Color(UIColor.systemGray5))
+                        .cornerRadius(5)
+                }
+                .padding(.leading, 1)
+                .padding(.trailing, 15)
             }
+            Spacer()
+            
             
         }
     }

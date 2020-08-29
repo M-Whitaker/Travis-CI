@@ -73,6 +73,12 @@ struct HomeView: View {
                         }
                     }
                     .navigationBarTitle("Repositories")
+                    .navigationBarItems(trailing:
+                    HStack {
+                        Button(action: {}) {
+                            Image(systemName: "arrow.clockwise")
+                        }.foregroundColor(.blue)
+                    })
                 } else if networkManager.loadingState == .loading {
                     LoadingView()
                     .navigationBarTitle("Repositories")

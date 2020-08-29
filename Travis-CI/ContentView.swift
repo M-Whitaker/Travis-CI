@@ -59,6 +59,42 @@ class NetworkManager: ObservableObject {
             
         }.resume()
     }
+    func getBuilds() {
+        let url = URL(string: baseURL + "/repos?include=branch.last_build")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("token \(SettingsVM.token)", forHTTPHeaderField: "Authorization")
+        request.setValue("3", forHTTPHeaderField: "Travis-API-Version")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print(error as Any)
+                return
+                
+            }
+            guard let data = data else {
+                print("No data")
+                return
+                
+            }
+            
+            let httpResponse = response as? HTTPURLResponse
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            
+            let result = try? decoder.decode(Result.self, from: data)
+//            dump(repos)
+            DispatchQueue.main.async {
+                if httpResponse?.statusCode == 200 {
+                    self.repos = result!.repositories
+                    self.loadingState = .loaded
+                } else {
+                    self.loadingState = .failed
+                }
+            }
+            
+        }.resume()
+    }
     func getUser() {
         let url = URL(string: "https://api.travis-ci.com/user")!
         var request = URLRequest(url: url)

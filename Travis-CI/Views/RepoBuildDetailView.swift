@@ -11,6 +11,10 @@ import SwiftUI
 struct RepoBuildDetailView: View {
     let repo: Repository
     
+    let builds = [
+        Build(id: 0, number: "13", state: "passed", duration: 12051, startedAt: "02/03/05", finishedAt: "02/03/05", commit: Commit(id: 1, sha: "125125", ref: "1251252", message: "Message", compareUrl: "https://google.com", committedAt: "04/02/05"))
+    ]
+    
     var body: some View {
         VStack {
             ZStack {
@@ -101,15 +105,13 @@ struct RepoBuildDetailView: View {
                 .padding(.leading, 1)
                 .padding(.trailing, 15)
             }
-            Spacer()
+            Divider()
+            List (builds) { build in
+                Text(build.number)
+            }
+            
             
             
         }
-    }
-}
-
-struct RepoBuildDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepoBuildView(repo: Repository(id: 3, name: "repo2", slug: "matt43121/repo2", starred: true, defaultBranch: Branch(name: "Master", lastBuild: Build(id: 1, number: "2", state: "passed", duration: 53, startedAt: "", finishedAt: "", commit: Commit(id: 1, sha: "abc", ref: "def", message: "Message", compareUrl: "https://github.com", committedAt: "12/12/18"))), active: false))
     }
 }

@@ -15,6 +15,8 @@ struct RepoBuildView: View {
         if repo.defaultBranch.lastBuild != nil {
             if repo.defaultBranch.lastBuild?.state == "passed" {
                 return ["icon": "checkmark", "colour": Color.green]
+            } else if repo.defaultBranch.lastBuild?.state == "errored" {
+                return ["icon": "exclamationmark", "colour": Color.yellow]
             } else {
                 return ["icon": "xmark", "colour": Color.red]
             }
@@ -35,7 +37,7 @@ struct RepoBuildView: View {
                             Text(repo.defaultBranch.lastBuild?.number ?? "0")
                         }
                     }.foregroundColor(isPassing()["colour"] as? Color)
-                Text("Default Branch: \(repo.defaultBranch.name ) Last Build: \(repo.defaultBranch.lastBuild?.state ?? "Not ran yet")" )
+                Text("Default Branch: \(repo.defaultBranch.name ) Last Build: \(repo.defaultBranch.lastBuild?.state.capitalized ?? "Not ran yet")" )
                     HStack {
                         Image(systemName: "calendar")
                         Text("Finished about \(convertTime(isoDate: repo.defaultBranch.lastBuild!.finishedAt).timeAgoDisplay())")

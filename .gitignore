@@ -50,4 +50,5 @@ playground.xcworkspace
 .build/
 
 # secret files
-Travis-CI/Constants.swift
+ios/Travis-CI/Constants.swift
+examples/token.txt

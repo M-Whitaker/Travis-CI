@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,6 @@
 		1177EF2623DDCF63008E8A16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2523DDCF63008E8A16 /* Preview Assets.xcassets */; };
 		1177EF2923DDCF63008E8A16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */; };
 		1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */; };
-		1188468C23FCA5DF008A4732 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188468B23FCA5DF008A4732 /* LoginView.swift */; };
 		11C41EA023F8AEC000AAF5A4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41E9F23F8AEC000AAF5A4 /* Repository.swift */; };
 		11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */; };
 		11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C41EA323F8AFA500AAF5A4 /* User.swift */; };
@@ -31,6 +30,8 @@
 		11DE490123FA1287005AAB68 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE490023FA1287005AAB68 /* Settings.swift */; };
 		11DE490323FA153C005AAB68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE490223FA153C005AAB68 /* SettingsView.swift */; };
 		11EE93E524013B1300685056 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE93E424013B1300685056 /* AuthView.swift */; };
+		754A24AC25CF3DDC00A073D8 /* SimpleOAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 754A24AB25CF3DDC00A073D8 /* SimpleOAuth2 */; };
+		754A24CA25CF592F00A073D8 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754A24C925CF592F00A073D8 /* Build.swift */; };
 		7571020B24B93D3F002CEDA1 /* RepoBuildHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7571020A24B93D3F002CEDA1 /* RepoBuildHistoryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +85,6 @@
 		1177EF2823DDCF63008E8A16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1177EF2A23DDCF63008E8A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildView.swift; sourceTree = "<group>"; };
-		1188468B23FCA5DF008A4732 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11C41E9F23F8AEC000AAF5A4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		11C41EA123F8AF1F00AAF5A4 /* RepoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoScreen.swift; sourceTree = "<group>"; };
 		11C41EA323F8AFA500AAF5A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -95,6 +95,9 @@
 		11DE490023FA1287005AAB68 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		11DE490223FA153C005AAB68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		11EE93E424013B1300685056 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		754A24BE25CF55A300A073D8 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		754A24BF25CF570A00A073D8 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		754A24C925CF592F00A073D8 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		7571020A24B93D3F002CEDA1 /* RepoBuildHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoBuildHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A24AC25CF3DDC00A073D8 /* SimpleOAuth2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +133,7 @@
 			children = (
 				11C41EA723F8BC9F00AAF5A4 /* SafariView.swift */,
 				11197397240339130075887B /* TimeConversion.swift */,
+				754A24C925CF592F00A073D8 /* Build.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -140,7 +145,6 @@
 				11C41EA923F8D1E600AAF5A4 /* LoadingView.swift */,
 				11DE48FE23FA0A97005AAB68 /* SearchView.swift */,
 				11DE490223FA153C005AAB68 /* SettingsView.swift */,
-				1188468B23FCA5DF008A4732 /* LoginView.swift */,
 				11EE93E424013B1300685056 /* AuthView.swift */,
 				11D4117023E4E5AA0088A2A0 /* RepoBuildDetailView.swift */,
 				1177EF4C23DDE03A008E8A16 /* RepoBuildView.swift */,
@@ -202,6 +206,8 @@
 				1177EF2723DDCF63008E8A16 /* LaunchScreen.storyboard */,
 				1177EF2A23DDCF63008E8A16 /* Info.plist */,
 				1177EF2423DDCF63008E8A16 /* Preview Content */,
+				754A24BE25CF55A300A073D8 /* Secrets.xcconfig */,
+				754A24BF25CF570A00A073D8 /* Dev.xcconfig */,
 			);
 			path = "Travis-CI";
 			sourceTree = "<group>";
@@ -285,6 +291,9 @@
 				116FCC3823FB5F17002DFCF3 /* PBXTargetDependency */,
 			);
 			name = "Travis-CI";
+			packageProductDependencies = (
+				754A24AB25CF3DDC00A073D8 /* SimpleOAuth2 */,
+			);
 			productName = "Travis-CI";
 			productReference = 1177EF1923DDCF5F008E8A16 /* Travis-CI.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 1177EF1023DDCF5F008E8A16;
+			packageReferences = (
+				754A24AA25CF3DDC00A073D8 /* XCRemoteSwiftPackageReference "SimpleOAuth2" */,
+			);
 			productRefGroup = 1177EF1A23DDCF5F008E8A16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,7 +395,6 @@
 				11C41EA023F8AEC000AAF5A4 /* Repository.swift in Sources */,
 				11C41EA223F8AF1F00AAF5A4 /* RepoScreen.swift in Sources */,
 				11DE490123FA1287005AAB68 /* Settings.swift in Sources */,
-				1188468C23FCA5DF008A4732 /* LoginView.swift in Sources */,
 				1177EF1D23DDCF5F008E8A16 /* AppDelegate.swift in Sources */,
 				11C41EAA23F8D1E600AAF5A4 /* LoadingView.swift in Sources */,
 				11EE93E524013B1300685056 /* AuthView.swift in Sources */,
@@ -396,6 +407,7 @@
 				11C41EA423F8AFA500AAF5A4 /* User.swift in Sources */,
 				1177EF2123DDCF5F008E8A16 /* ContentView.swift in Sources */,
 				7571020B24B93D3F002CEDA1 /* RepoBuildHistoryView.swift in Sources */,
+				754A24CA25CF592F00A073D8 /* Build.swift in Sources */,
 				1177EF4D23DDE03A008E8A16 /* RepoBuildView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +531,7 @@
 		};
 		1177EF4123DDCF63008E8A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754A24BF25CF570A00A073D8 /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -715,6 +728,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		754A24AA25CF3DDC00A073D8 /* XCRemoteSwiftPackageReference "SimpleOAuth2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hadiidbouk/SimpleOAuth2";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		754A24AB25CF3DDC00A073D8 /* SimpleOAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 754A24AA25CF3DDC00A073D8 /* XCRemoteSwiftPackageReference "SimpleOAuth2" */;
+			productName = SimpleOAuth2;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1177EF1123DDCF5F008E8A16 /* Project object */;
 }

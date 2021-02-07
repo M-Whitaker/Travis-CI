@@ -40,6 +40,8 @@ struct SettingsView: View {
                             .alert(isPresented:$showingAlert) {
                                 Alert(title: Text("Are you sure?"), message: Text("When logging out your token will be cleared"), primaryButton: .destructive(Text("Logout")) {
                                         self.signInSuccess = false
+                                        self.SettingsVM.token = ""
+                                        UserDefaults.standard.set(nil, forKey: "OAuth2CredentialsKey")
                                 }, secondaryButton: .cancel())
                             
                             }

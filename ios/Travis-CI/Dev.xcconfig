@@ -1,0 +1,11 @@
+//
+//  Dev.xcconfig
+//  Travis-CI
+//
+//  Created by Matt Whitaker on 06/02/2021.
+//  Copyright © 2021 Matt Whitaker. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Secrets.xcconfig"

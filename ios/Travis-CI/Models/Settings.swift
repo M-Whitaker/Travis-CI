@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SimpleOAuth2
 
 class Settings: ObservableObject {
     @Published var authEnabled: Bool = UserDefaults.standard.bool(forKey: "authEnabled") {
@@ -24,4 +25,5 @@ class Settings: ObservableObject {
             UserDefaults.standard.set(self.token, forKey: "token")
         }
     }
+    @Published var gh_token: OAuth2Credentials? = OAuth2Credentials.load()
 }
